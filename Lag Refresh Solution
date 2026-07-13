@@ -1,0 +1,8 @@
+If your client is lagging try this
+
+Alias
+pattern: qReload
+javascript
+
+   document.getElementById('mudoutput').innerHTML = ""
+   gwc.output.append('Reloading...')
