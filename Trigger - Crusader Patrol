@@ -1,0 +1,28 @@
+**Change last line to your special**
+
+Trigger Name: Util: Crusader Patrol
+pattern: (You find no such living creature.|are fighting each other|That requires an explanation mark|You cannot attack (.*) as (.*) is in your team)
+regexp
+javascript
+
+
+// Get the userdata
+    let index = gwc.userdata.crusader.index
+    const paths = gwc.userdata.crusader.path 
+    const step = paths[index]
+
+    // Turn off the trigger when finished
+    if (index > paths.length - 1) {
+    gwc.trigger.disable('Util: Crusader Patrol')
+    gwc.trigger.disable('Util: Crusader kill next')
+    return;
+    }
+
+    // Move to next room
+    gwc.connection.send(step)
+
+    // Increase index and follow through with next action in room.
+
+    gwc.userdata.crusader.index = ++index;
+    gwc.connection.send("kill crusader")
+    gwc.connection.send("slash")
