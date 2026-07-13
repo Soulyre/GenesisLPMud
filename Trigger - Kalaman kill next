@@ -1,0 +1,5 @@
+Name: Util: Kalaman Patrol kill next
+pattern: The (.*) died.
+regexp
+
+!kill human
