@@ -1,0 +1,27 @@
+**Change last line to your special*
+
+Trigger Name: Util: Kalaman Patrol
+pattern: (You find no such living creature.|are fighting each other|That requires an explanation mark|You cannot attack (.*) as (.*) is in your team)
+javascript
+regexp
+
+// Get the userdata
+    let index = gwc.userdata.kalaman.index
+    const paths = gwc.userdata.kalaman.path 
+    const step = paths[index]
+
+    // Turn off the trigger when finished
+    if (index > paths.length - 1) {
+    gwc.trigger.disable('Util: Kalaman Patrol')
+    gwc.trigger.disable('Util: Kalaman Patrol kill next')
+    return;
+    }
+
+    // Move to next room
+    gwc.connection.send(step)
+
+    // Increase index and follow through with next action in room.
+
+    gwc.userdata.kalaman.index = ++index;
+    gwc.connection.send("kill human")
+    gwc.connection.send("slash")
