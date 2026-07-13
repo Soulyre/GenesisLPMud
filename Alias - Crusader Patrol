@@ -1,0 +1,76 @@
+Alias 
+**Change last line to your special**
+
+command: kill_cru
+javascript
+
+gwc.trigger.enable("Util: Crusader Patrol")
+gwc.trigger.enable("Util: Crusader Patrol kill next")
+
+// Starting position is at Mount Blacksmith
+// Path will travel through crusader camp 
+const path = [ 
+// Mount Blacksmith 
+"n",
+"n",
+"ne",
+"ne",
+"nw",
+"w",
+"w",
+"w",
+"w",
+"w",
+"w",
+"e",
+"s",
+"w",
+"w",
+"e",
+"e",
+"e",
+"e",
+"e",
+"e",
+"n",
+"w",
+"n",
+"e",
+"w",
+"w",
+"w",
+"w",
+"w",
+"w",
+"n",
+"e",
+"e",
+"e",
+"w",
+"s",
+"s",
+"e",
+"e",
+"e",
+"e",
+"e",
+"se",
+"sw",
+"sw",
+"s",
+"s",
+]
+
+// Saving the path and index to userdata
+gwc.userdata.crusader = {
+path,
+index: 0
+}
+
+// Turns on the trigger
+gwc.trigger.enable('Util: Crusader Patrol')
+gwc.trigger.enable('Util: Crusader Patrol kill next')
+
+// Initial attack on humans. Use what you normally do here.
+gwc.connection.send("kill crusader")
+gwc.connection.send("slash")
