@@ -1,0 +1,5 @@
+Trigger Name: Util: Crusader Patrol kill next
+pattern: The (.*) died.
+regexp
+
+!kill human
