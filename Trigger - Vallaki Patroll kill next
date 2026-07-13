@@ -1,0 +1,5 @@
+Trigger name: Util: Vallaki Patrol kill next
+Pattern: The (.*) died.
+regexp
+
+!kill human
