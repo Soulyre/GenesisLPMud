@@ -1,0 +1,6 @@
+Trigger Name: Util: Drakmere Patrol kill next
+regexp
+
+pattern: The (.*) died.
+
+!kill human
