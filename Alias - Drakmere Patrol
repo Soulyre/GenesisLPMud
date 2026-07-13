@@ -1,7 +1,7 @@
 Must have other 2 Util: Drakmere Patrol triggers set
 *****Change last line to your special attack or delete line*****
 
-Pattern: kill_drakmere
+Command: kill_drakmere
 javascript
 
 gwc.trigger.enable("Util: Drakmere Patrol")
