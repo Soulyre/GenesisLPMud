@@ -1,0 +1,13 @@
+This alias will stop all patrols/triggers
+
+command: pstop
+javascript
+
+gwc.trigger.disable("Util: Kalaman Patrol")
+gwc.trigger.disable("Util: Kalaman Patrol kill next")
+gwc.trigger.disable("Util: Drakmere Patrol")
+gwc.trigger.disable("Util: Drakmere Patrol kill next")
+gwc.trigger.disable("Util: Crusader Patrol")
+gwc.trigger.disable("Util: Crusader Patrol kill next")
+gwc.trigger.disable("Util: Vallaki Patrol")
+gwc.trigger.disable("Util: Vallaki Patrol kill next")
