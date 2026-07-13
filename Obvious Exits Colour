@@ -1,0 +1,9 @@
+Obvious Exits Colour
+Feel free to change the colour to whatever you want
+
+Trigger Name: Obv exits colour
+pattern: obvious (?:exit|exits)
+regexp
+javascript
+
+gwc.output.color("green");
