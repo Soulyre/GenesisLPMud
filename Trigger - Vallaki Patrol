@@ -1,0 +1,27 @@
+**Change last line to your special**
+
+Trigger Name: Util: Vallaki Patrol
+Pattern: (You find no such living creature.|are fighting each other|That requires an explanation mark|You cannot attack (.*) as (.*) is in your team|With a burst of energy fueled by adrenaline, she swiftly dodges the incoming attack. Her small figure darts through the crowd and into a narrow alley, vanishing from sight. Her youthful agility and the urgency of her task allowing her to evade harm, leaving in her wake a trail of startled whispers and concerned gazes.|You feel a divine force protecting the (.*); your attack fails.)
+javascript
+regexp
+
+// Get the userdata
+    let index = gwc.userdata.vallaki.index
+    const paths = gwc.userdata.vallaki.path 
+    const step = paths[index]
+
+    // Turn off the trigger when finished
+    if (index > paths.length - 1) {
+    gwc.trigger.disable('Util: Vallaki Patrol')
+    gwc.trigger.disable('Util: Vallaki Patrol kill next')
+    return;
+    }
+
+    // Move to next room
+    gwc.connection.send(step)
+
+    // Increase index and follow through with next action in room.
+
+    gwc.userdata.vallaki.index = ++index;
+    gwc.connection.send("kill human")
+    gwc.connection.send("slash")
